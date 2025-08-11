@@ -1,17 +1,18 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Badrinath Gore</title>
-
-    <link rel="icon" href="images/BG.png" sizes="32x32" type="image/x-icon">
-
-  <style>
+    <title>Badrinath Gore - Skills</title>
+    
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+   <link rel="icon" href="images/badriLogo1.png" sizes="32x32" type="image/x-icon">
  
-</style>
-
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
@@ -31,64 +32,279 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-
-     <script>
-    let backPressedOnce = false;
-
-    window.onload = function () {
-      history.pushState(null, null, location.href); // Block default back
-      window.onpopstate = function () {
-        if (backPressedOnce) {
-          // Exit page or simulate close
-          window.location.href = "about:blank"; // OR: window.close(); but it won't work unless window opened by script
-        } else {
-          backPressedOnce = true;
-          alert("Press back again to exit");
-          setTimeout(() => backPressedOnce = false, 2000);
-          history.pushState(null, null, location.href); // Re-push to prevent exit
-        }
-      };
-    };
-  </script>
     
-</head>
-   
-<style>
-       body {
-      background-image: url('images/background.jpg');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      background-attachment: fixed; /* Optional: makes it stay fixed while scrolling */
+    
+    
+    
+    <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       
+      margin: 0;
+      
+      color: #222;
     }
 
-    </style>
+    h1 {
+      text-align: center;
+      color: #1e90ff;
+      margin-bottom: 1rem;
+    }
 
-<!-- <body style="background-image: url(images/background.jpg);
-background-repeat: no-repeat;
-background-position: center;
-background-size: cover;"> -->
+    .skills-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-<body> 
- 
- 
+    /* Category Section */
+    section.skill-category {
+      margin-bottom: 3rem;
+    }
+
+    section.skill-category h2 {
+      border-left: 6px solid #87ceeb;
+      padding-left: 12px;
+      color: #4169e1;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    /* Grid of cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 20px;
+    }
+
+    /* Individual card */
+    .skill-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 12px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+      text-align: center;
+      font-weight: 600;
+      color: white;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgb(0 0 0 / 0.2);
+    }
+
+    /* Skill image */
+    .skill-card img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      margin-bottom: 10px;
+      border: 3px solid white;
+      border-radius: 50%;
+      background: rgba(255 255 255 / 0.2);
+      padding: 5px;
+    }
+
+    /* Different colors for cards - frontend */
+    /* Feel free to change colors */
+    .frontend .skill-card:nth-child(1) {
+      background: #6a91f5;
+      border: 3px solid #405ad6;
+    }
+
+    .frontend .skill-card:nth-child(2) {
+      background: #59c0ff;
+      border: 3px solid #2890e3;
+      color: #003d66;
+    }
+
+    .frontend .skill-card:nth-child(3) {
+      background: #f063a4;
+      border: 3px solid #cc2e84;
+    }
+
+    .frontend .skill-card:nth-child(4) {
+      background: #ff8c42;
+      border: 3px solid #e07b00;
+    }
+
+    .frontend .skill-card:nth-child(5) {
+      background: #563d7c;
+      border: 3px solid #462e5a;
+    }
+
+    /* backend */
+    .backend .skill-card:nth-child(1) {
+      background: #45b6af;
+      border: 3px solid #2f827d;
+    }
+
+    .backend .skill-card:nth-child(2) {
+      background: #7ac857;
+      border: 3px solid #4a7c24;
+      color: #0a2f00;
+    }
+
+    .backend .skill-card:nth-child(3) {
+      background: #ef7c8e;
+      border: 3px solid #bc3e51;
+    }
+
+    .backend .skill-card:nth-child(4) {
+      background: #f9a825;
+      border: 3px solid #b27c00;
+      color: #3e2b00;
+    }
+
+    .backend .skill-card:nth-child(5) {
+      background: #795548;
+      border: 3px solid #563d2f;
+    }
+
+    .backend .skill-card:nth-child(6) {
+      background: #607d8b;
+      border: 3px solid #455a64;
+    }
+
+    /* database */
+    .database .skill-card:nth-child(1) {
+      background: #ff9f1c;
+      border: 3px solid #c37000;
+      color: #3e2b00;
+    }
+
+    .database .skill-card:nth-child(2) {
+      background: #0077c2;
+      border: 3px solid #004974;
+    }
+
+    .database .skill-card:nth-child(3) {
+      background: #ff5c8a;
+      border: 3px solid #b02f56;
+    }
+
+    /* tools */
+    .tools .skill-card:nth-child(1) {
+      background: #4d79ff;
+      border: 3px solid #2f4ddb;
+    }
+
+    .tools .skill-card:nth-child(2) {
+      background: #24292e;
+      border: 3px solid #121417;
+    }
+
+    .tools .skill-card:nth-child(3) {
+      background: #0db7ed;
+      border: 3px solid #087c9b;
+      color: #003d66;
+    }
+
+    .tools .skill-card:nth-child(4) {
+      background: #ff9900;
+      border: 3px solid #b26a00;
+      color: #3e2b00;
+    }
+
+    .tools .skill-card:nth-child(5) {
+      background: #f47c3c;
+      border: 3px solid #b0581e;
+    }
+
+    .tools .skill-card:nth-child(6) {
+      background: #ffca28;
+      border: 3px solid #b28f00;
+      color: #3e2b00;
+    }
+
+    .tools .skill-card:nth-child(7) {
+      background: #61affe;
+      border: 3px solid #2979c8;
+      color: #003d66;
+    }
+
+    /* soft skills */
+    .soft-skills .skill-card:nth-child(1) {
+      background: #4a90e2;
+      border: 3px solid #2d5d9f;
+    }
+
+    .soft-skills .skill-card:nth-child(2) {
+      background: #f07c82;
+      border: 3px solid #a34b4f;
+      color: #400026;
+    }
+
+    .soft-skills .skill-card:nth-child(3) {
+      background: #ffb100;
+      border: 3px solid #b27c00;
+      color: #4a4000;
+    }
+
+    .soft-skills .skill-card:nth-child(4) {
+      background: #7ed6df;
+      border: 3px solid #439698;
+      color: #144227;
+    }
+
+    /* code editors & IDEs */
+    .code-editors .skill-card:nth-child(1) {
+      background: #007acc;
+      border: 3px solid #005f99;
+    }
+
+    .code-editors .skill-card:nth-child(2) {
+      background: #3ddc84;
+      border: 3px solid #2b7a59;
+      color: #003d00;
+    }
+
+    .code-editors .skill-card:nth-child(3) {
+      background: #d13135;
+      border: 3px solid #8f1e21;
+    }
+
+    .code-editors .skill-card:nth-child(4) {
+      background: #0078d7;
+      border: 3px solid #004e8c;
+    }
+
+    .code-editors .skill-card:nth-child(5) {
+      background: #2d2d30;
+      border: 3px solid #1a1a1a;
+    }
+
+    .code-editors .skill-card:nth-child(6) {
+      background: #ff4b2b;
+      border: 3px solid #b2371f;
+    }
+
+    .code-editors .skill-card:nth-child(7) {
+      background: #f6ad55;
+      border: 3px solid #a77434;
+      color: #3e2b00;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .skill-card img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  </style>
+    
+</head>
+
+<body>
 
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <symbol id="page-add" viewBox="0 0 20 20">
             <path fill="currentColor"
                 d="M4 4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v5.207A5.5 5.5 0 0 0 14.5 9a5.5 5.5 0 0 0-3.163 1H7.5a.5.5 0 0 0 0 1h2.757a5.48 5.48 0 0 0-1.254 3.675A5.48 5.48 0 0 0 10.257 18H6a2 2 0 0 1-2-2zm8.5 2h-5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1m2 13a4.5 4.5 0 1 0 0-9a4.5 4.5 0 0 0 0 9m0-7a.5.5 0 0 1 .5.5V14h1.5a.5.5 0 0 1 0 1H15v1.5a.5.5 0 0 1-1 0V15h-1.5a.5.5 0 0 1 0-1H14v-1.5a.5.5 0 0 1 .5-.5" />
-        </symbol>
-        <symbol id="multiple-pages" viewBox="0 0 24 24">
-            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
-                <path d="M1.992 19h3m3 0h-3m0 0v-3m0 3v3M7 2h9.5L21 6.5V19" />
-                <path
-                    d="M11 22h5.5a1.5 1.5 0 0 0 1.5-1.5V8.749a.6.6 0 0 0-.176-.425l-3.148-3.148A.6.6 0 0 0 14.25 5H4.5A1.5 1.5 0 0 0 3 6.5V13" />
-                <path d="M14 5v3.4a.6.6 0 0 0 .6.6H18" />
-            </g>
-        </symbol>
-        <symbol id="pages" viewBox="0 0 24 24">
-            <path fill="currentColor"
-                d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h14q.825 0 1.413.588T21 5v14q0 .825-.587 1.413T19 21zm4.075-4.75L12 14.475l2.925 1.775l-.775-3.325l2.6-2.25l-3.425-.275L12 7.25l-1.325 3.15l-3.425.275l2.6 2.25z" />
         </symbol>
         <symbol id="contact" viewBox="0 0 14 14">
             <path fill="currentColor" fill-rule="evenodd"
@@ -163,14 +379,14 @@ background-size: cover;"> -->
 
     <nav id="header-nav" class="navbar navbar-expand-lg py-4 z-1" data-bs-theme="dark">
         <div class="container-fluid padding-side">
-            <a class="navbar-brand" href="index.html"><img src="images/badriLogo.png" alt="logo"style="margin-left: -60px;"></a>
+            <a class="navbar-brand" href="index.html"><img src="images/badriLogo.png" alt="logo"style="margin-left: -55px;"></a>
 
             <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel" style="background-color: #1e1128">
+                aria-labelledby="offcanvasNavbarLabel"style="background-color: #1e1128">
                 <div class="offcanvas-header">
                     <!-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5> -->
                     <button type="button" class="btn-close text-reset shadow-none" data-bs-dismiss="offcanvas"
@@ -178,11 +394,7 @@ background-size: cover;"> -->
                 </div>
                 <div class="offcanvas-body justify-content-end">
                     <div class="d-lg-none">
-                        
-                        
-                        
-                        
-                        <img src="images/badrinath.png" alt="img" class="img-fluid multi-border">
+                              <img src="images/badrinath.png" alt="img" class="img-fluid multi-border">
 
 <style>
 .multi-border {
@@ -201,8 +413,6 @@ background-size: cover;"> -->
     100% { border-color: purple; }
 }
 </style>
-                        
-
                         <div class="text-center">
                             <a href="contact.html" class="btn button  text-white mt-4 position-relative pe-5"
                                 data-aos="fade-up" data-aos-duration="1600">
@@ -215,12 +425,13 @@ background-size: cover;"> -->
                             </a>
                         </div>
                     </div>
-             
+                    
+                   
                   <ul class="d-flex list-unstyled justify-content-center mt-4">
 
                 
 <li class="ms-4">
-  <a class="nav-link" href="https://github.com/BADRINATHGORE" >
+  <a class="nav-link" href="https://github.com/BADRINATHGORE"  rel="noopener noreferrer">
     <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
       <path d="M12 0.2975C5.3725 0.2975 0 5.67 0 12.2975C0 17.5925 3.43875 22.0925 8.205 23.6825C8.805 23.7975 9.0225 23.4375 9.0225 23.1225C9.0225 22.8375 9.01 22.1325 9.005 21.1525C5.6725 21.8975 4.9675 19.5925 4.9675 19.5925C4.4225 18.1775 3.6325 17.7975 3.6325 17.7975C2.545 17.0825 3.7175 17.0975 3.7175 17.0975C4.9225 17.18 5.5475 18.3375 5.5475 18.3375C6.6175 20.1225 8.3625 19.5925 9.05 19.2825C9.16 18.5125 9.4675 17.9725 9.81 17.6775C7.15 17.3825 4.345 16.3125 4.345 11.5925C4.345 10.2825 4.795 9.2125 5.55 8.3725C5.42 8.0775 5.045 6.8525 5.67 5.1325C5.67 5.1325 6.6525 4.8175 9 6.3975C9.93 6.1275 10.92 6 11.91 6C12.9 6 13.89 6.1275 14.82 6.3975C17.16 4.8175 18.135 5.1325 18.135 5.1325C18.765 6.8525 18.39 8.0775 18.26 8.3725C19.02 9.2125 19.465 10.2825 19.465 11.5925C19.465 16.325 16.655 17.375 13.995 17.665C14.43 18.045 14.82 18.7875 14.82 19.8775C14.82 21.4575 14.805 22.7725 14.805 23.1225C14.805 23.4425 15.015 23.8075 15.63 23.6825C20.39 22.0875 23.82 17.5875 23.82 12.2975C23.82 5.67 18.45 0.2975 12 0.2975Z"/>
     </svg>
@@ -273,184 +484,212 @@ background-size: cover;"> -->
         </div>
     </nav>
 
- 
-           <section id="hero" class="padding-medium1">
-
-            <!--- 
-               
-               <div id="he">
-        <div class="container-fluid padding-side text-white"data-aos="fade-up" data-aos-duration="1600" >
-            <div class="d-none d-lg-block position-absolute bottom-0 end-0">
-                <img src="images/banner-img.png" alt="img" class="img-fluid">
-            </div>
-            </div>
-
-            <div class="row align-items-center">
-                <div class="col-lg-6 text-center d-lg-none" data-aos="fade-up" data-aos-duration="1400">
-                    <img src="images/banner-img.png" alt="img" class="img-fluid">
-                </div>
-
-               --->
-<div id="he">
-    <div class="container-fluid padding-side text-white" data-aos="fade-up" data-aos-duration="1600">
-
-        <!-- Desktop Image on Right -->
-        <div class="d-none d-lg-block position-absolute bottom-0 end-0">
-            <div class="d-flex flex-column align-items-center" style="position: relative;">
-                <img src="images/banner-img.png" alt="img" class="img-fluid banner-image">
- 
-            </div>
-        </div>
-
-        <!-- Mobile Image (center) + Resume Button -->
-        <div class="row align-items-center d-lg-none text-center" data-aos="fade-up" data-aos-duration="1400" >
-            <div class="col-12">
-                <img src="images/banner-img.png" alt="img" class="img-fluid banner-image"style="border-radius: 20px">
-                 
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<style>
-   .banner-image {
-        border: 5px solid;
-        border-image-slice: 1;
-        
-        animation: rainbow-border 8s linear infinite;
-        padding: 5px;
-        max-width: 100%;
-        height: auto;
-       
-    }
-
-    @keyframes rainbow-border {
-        0%, 100% {
-            border-image-source: linear-gradient(45deg, #FF6B6B, #87CEEB, #9C27B0, #FFD700, #4A148C);
-        }
-        25% {
-            border-image-source: linear-gradient(45deg, #87CEEB, #9C27B0, #FFD700, #4A148C, #FF6B6B);
-        }
-        50% {
-            border-image-source: linear-gradient(45deg, #9C27B0, #FFD700, #4A148C, #FF6B6B, #87CEEB);
-        }
-        75% {
-            border-image-source: linear-gradient(45deg, #FFD700, #4A148C, #FF6B6B, #87CEEB, #9C27B0);
-        }
-    }
-
      
-</style>
- 
-           <div class="col-lg-6 ms-lg-5">
-          
-                    
-                    <br>
-       <div  class="resume-btn" data-aos="fade-up" data-aos-duration="1600">    
-  <a href="images/BadrinathGore.pdf" download class="resume-btn">
+     
+     
+     
+     <div style="padding: 20px">
+     
+     <div data-aos="fade-up"  
+      data-aos-duration="1400"  >
 
-    <button>
-      <span>MY RESUME</span>
-      <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 16 16">
-        <path d="M.5 9.9a.5.5 0 0 1 .5.5V13a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V10.4a.5.5 0 0 1 1 0V13a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V10.4a.5.5 0 0 1 .5-.5z"/>
-        <path d="M7.646 10.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 1 0-.708-.708L8.5 9.293V1.5a.5.5 0 0 0-1 0v7.793L5.354 7.146a.5.5 0 1 0-.708.708l3 3z"/>
-      </svg>
-    </button>
-  </a>
- </div> 
- 
-                     <h3 class="banner-size fw-medium display-3 my-4" data-aos="fade-up" data-aos-duration="1600">
-                         
-                        Hi, I'm BADRINATH GORE<span class="text-primary"> Aspiring Full Stack Java Developer & Problem Solver </span>
-                    </h3>
-                    <p class="fs-5" data-aos="fade-up" data-aos-duration="1600">
-                        Passionate about crafting efficient, scalable, and user-friendly web applications using Java and modern technologies. Skilled in both front-end and back-end development, I am eager to contribute to dynamic projects, continuously learn new frameworks, and grow as a developer. Dedicated to writing clean, maintainable code and building seamless digital experiences.
-                    </p>
-                    <a href="portfolio.html" class="btn rounded-pill button text-white mt-4 position-relative pe-5"
-                        data-aos="fade-up" data-aos-duration="1600">
-                        <span> Explore My Work </span>
-                        <div class="position-absolute top-50 end-0 translate-middle-y me-3">
-                            <svg class="arrow-right text-white p-1" width="28" height="28">
-                                <use xlink:href="#arrow-right"></use>
-                            </svg>
-                        </div>
-                    </a>
-                </div>
-            </div>
+  <h1>Technical Skills</h1>
+  
+  </div>
+
+  <div class="skills-container" data-aos="fade-up"  
+      data-aos-duration="1400">
+
+    <section class="skill-category frontend"data-aos="fade-up"  
+      data-aos-duration="1400"  >
+      <h2>Frontend</h2>
+      <div class="cards">
+        <div class="skill-card">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="HTML5" />
+          HTML5
         </div>
+        <div class="skill-card">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="CSS" />
+          CSS
+        </div>
+        <div class="skill-card">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" />
+          JavaScript
+        </div>
+        <div class="skill-card" >
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain.svg" alt="Bootstrap" />
+          Bootstrap
+        </div>
+        <div class="skill-card" >
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React" />
+          React
+        </div>
+      </div>
     </section>
 
-
-<div class="process-content container mt-5" data-aos="fade-up" data-aos-duration="1400">
-    <div id="counter">
-
-        <!-- First Row -->
-        <div class="row gy-4 justify-content-center text-center">
-            <div class="col-lg-4 col-md-4 col-6">
-                <div class="d-flex justify-content-center align-items-center">
-                    <h4 class="counter-value text-primary fw-bold fs-1 banner-size" data-count="150">150</h4>
-                    <span class="text-primary fs-4 fw-bold">+</span>
-                </div>
-                <p class="text-uppercase mb-0 fw-bold">BUGS FIXED</p>
-            </div>
-            <div class="col-lg-4 col-md-4 col-6">
-                <div class="d-flex justify-content-center align-items-center">
-                    <h4 class="counter-value text-primary fw-bold fs-1 banner-size" data-count="5">5</h4>
-                    <span class="text-primary fs-4 fw-bold">+</span>
-                </div>
-                <p class="text-uppercase mb-0 fw-bold">Projects done</p>
-            </div>
-            <div class="col-lg-4 col-md-4 col-6">
-                <div class="d-flex justify-content-center align-items-center">
-                    <h4 class="counter-value text-primary fw-bold fs-1 banner-size" data-count="15">15</h4>
-                    <span class="text-primary fs-4 fw-bold">+</span>
-                </div>
-                <p class="text-uppercase mb-0 fw-bold"> GITHUB CONTRIBUTIONS </p>
-            </div>
+    <section class="skill-category backend"data-aos="fade-up"  
+      data-aos-duration="1400">
+      <h2>Backend</h2>
+      <div class="cards">
+        <div class="skill-card">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Core Java" />
+          Core Java
         </div>
-
-        <!-- Second Row -->
-        <div class="row gy-4 justify-content-center text-center mt-4">
-            <div class="col-lg-4 col-md-4 col-6">
-                <div class="d-flex justify-content-center align-items-center">
-                    <h4 class="counter-value text-primary fw-bold fs-1 banner-size" data-count="0.5">0.5</h4>
-                    <span class="text-primary fs-4 fw-bold">+</span>
-                </div>
-                <p class="text-uppercase mb-0 fw-bold">years experience</p>
-            </div>
-            <div class="col-lg-4 col-md-4 col-6">
-                <div class="d-flex justify-content-center align-items-center">
-                    <h4 class="counter-value text-primary fw-bold fs-1 banner-size" data-count="4">4</h4>
-                    <span class="text-primary fs-4 fw-bold">+</span>
-                </div>
-                <p class="text-uppercase mb-0 fw-bold">Certificate's</p>
-            </div>
-            <div class="col-lg-4 col-md-4 col-6">
-                <div class="d-flex justify-content-center align-items-center">
-                    <h4 class="counter-value text-primary fw-bold fs-1 banner-size" data-count="2500">2500</h4>
-                    <span class="text-primary fs-4 fw-bold">+</span>
-                </div>
-                <p class="text-uppercase mb-0 fw-bold">HOURS SPENT ON CODING</p>
-            </div>
+        <div class="skill-card">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Advanced Java" />
+          Advanced Java
         </div>
+        <div class="skill-card">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="PHP" />
+          PHP
+        </div>
+        <div class="skill-card">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="C" />
+          C
+        </div>
+        <div class="skill-card">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="C++" />
+          C++
+        </div>
+        <div class="skill-card">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" />
+          Python
+        </div>
+      </div>
+    </section>
 
-    </div>
-</div>
+    <section class="skill-category database" data-aos="fade-up"  
+      data-aos-duration="1400">
+      <h2>Database</h2>
+      <div class="cards">
+        <div class="skill-card">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" alt="MySQL" />
+          MySQL
+        </div>
+        <div class="skill-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Oracle_logo.svg" alt="Oracle" style="background:white; border-radius: 10px; padding:5px;" />
+          Oracle
+        </div>
+        <div class="skill-card">
+          <img src="https://pixabay.com/vectors/database-manage-administer-4941338/" alt="SQLite" />
+          SQLite
+        </div>
+      </div>
+    </section>
 
-<br>
-    <br>
+    <section class="skill-category tools" data-aos="fade-up"  
+      data-aos-duration="1400">
+      <h2>Tools & Platforms</h2>
+      <div class="cards">
+        <div class="skill-card">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git" />
+          Git
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" />
+          GitHub
+        </div>
+        <div class="skill-card">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" alt="Docker" />
+          Docker
+        </div>
+        <div class="skill-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" style="background:white; border-radius: 10px; padding:5px;" />
+          AWS
+        </div>
+        <div class="skill-card">
+          <img src="https://render.com/images/favicon-32x32.png" alt="Render" />
+          Render
+        </div>
+        <div class="skill-card">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-plain.svg" alt="Firebase" />
+          Firebase
+        </div>
+        <div class="skill-card">
+          <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="Postman" />
+          Postman
+        </div>
+      </div>
+    </section>
+
+    <section class="skill-category code-editors"data-aos="fade-up"  
+      data-aos-duration="1400">
+      <h2>Code Editors & IDE's</h2>
+      <div class="cards">
+        <div class="skill-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Android_Studio_icon.svg" alt="Android Studio" />
+          Android Studio
+        </div>
+        <div class="skill-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Turbo_C_Logo.svg" alt="Turbo C" style="background:white; border-radius: 10px; padding:5px;" />
+          Turbo C
+        </div>
+        <div class="skill-card">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg" alt="VS Code" />
+          VS Code
+        </div>
+        <div class="skill-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/Eclipse_logo_1.svg" alt="Eclipse IDE" />
+          Eclipse IDE
+        </div>
+        <div class="skill-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/IntelliJ_IDEA_Icon.svg" alt="IntelliJ IDEA" />
+          IntelliJ IDEA
+        </div>
+        <div class="skill-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/PyCharm_Icon.svg" alt="PyCharm" />
+          PyCharm
+        </div>
+        <div class="skill-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Sublime_Text_Logo.png" alt="Sublime Text" />
+          Sublime Text
+        </div>
+      </div>
+    </section>
     
+    <div data-aos="fade-up"  
+      data-aos-duration="1400">
+    <h1>Soft Skills</h1>
+    </div>
+
+    <section class="skill-category soft-skills"data-aos="fade-up"  
+      data-aos-duration="1400">
+      <h2>Soft Skills</h2>
+      <div class="cards">
+        <div class="skill-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/3079/3079111.png" alt="Communication" />
+          Communication
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968713.png" alt="Teamwork" />
+          Teamwork
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/609/609803.png" alt="Time Management" />
+          Time Management
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="Problem Solving" />
+          Problem Solving
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+         </div>
+         
+         
     <nav id="side-nav" class="navbar-side p-3 p-lg-3 me-lg-5 text-center" data-bs-theme="dark">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">
+                <a class="nav-link " aria-current="page" href="index.html">
                     <svg width="24" height="24">
                         <use xlink:href="#home"></use>
                     </svg>
                 </a>
             </li>
-            <li class="nav-item">
+          <li class="nav-item">
                 <a class="nav-link" href="about.html">
                     <svg width="24" height="24">
                         <use xlink:href="#person"></use>
@@ -464,7 +703,7 @@ background-size: cover;"> -->
                     </svg>
                 </a>
             </li>
-            
+             
                 </a>
             </li>
             <li class="nav-item">
@@ -474,18 +713,21 @@ background-size: cover;"> -->
                     </svg>
                 </a>
             </li> 
-            </li>
         </ul>
     </nav>
    
- <!-- Footer 
+        
+         <br>
+         
+       <br>  
+    
+ 
+<!-- Footer 
 <footer class="text-center py-4" style="font-family: 'Inter', sans-serif;">
 --->
     <footer class="text-center py-4" style="font-family: 'Inter', sans-serif;">
-    <!---
-  <p class="fs-6 animated-footer-text" style="margin-bottom: 5px; line-height: 1.6;">
-    --->
-     <p class="fs-6 animated-footer-text" data-aos="fade-up" data-aos-duration="1600" style="margin-bottom: 5px; line-height: 1.6">
+     
+     <p class="fs-6 animated-footer-text" data-aos="fade-up" data-aos-duration="1600" style="margin-top: -50px; line-height: 1.6">
       
       <!-- Line 1 -->
     <span style="color: #87CEEB;">Designing</span>       <!-- Sky Blue -->
@@ -535,10 +777,9 @@ background-size: cover;"> -->
   }
 </style>
 
-    
-      <br>
+
 <br>
-      
+<br>
     <!-- script ================================================== -->
     <script src="js/jquery-1.11.0.min.js"></script>
 
@@ -556,8 +797,8 @@ background-size: cover;"> -->
 
     <script src="js/plugins.js"></script>
     <script src="js/script.js"></script>
- 
 
 </body>
 
 </html>
+
